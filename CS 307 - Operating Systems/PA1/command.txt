@@ -1,0 +1,1 @@
+man touch | grep -A 5 -e --time=WORD > output.txt 
