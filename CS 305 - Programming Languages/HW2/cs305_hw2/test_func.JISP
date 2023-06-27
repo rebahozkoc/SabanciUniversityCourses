@@ -1,0 +1,19 @@
+[
+    [ "Function", [], []]
+    [ "Function", [], [ ["Print", 'Hello World']]]
+    [ "Function", ["X", "Y"],
+        [
+            [ "Print", 'Start of the function.']
+            [ "If", [">", ["Get", "X"], ["Get", "Y"]],
+                [
+                    [ "Print", 'X is greater than Y']
+                ]
+                [
+                    [ "Print", 'X is NOT greater than Y']
+                ]
+            ]
+            ["Print", 'End of the function.']
+        ]
+    ]
+    [ "Function", ["f"], []]
+]

@@ -1,0 +1,108 @@
+  #include <stdio.h>
+  #include <string.h>
+  #include<stdbool.h>  
+  #include <stdlib.h>
+  
+  int noOfLines = 1;
+%x instring
+%%
+"\"Get\""       printf("%d tGET\n", noOfLines);
+"\"Set\""       printf("%d tSET\n", noOfLines);
+"\"Function\""  printf("%d tFUNCTION\n", noOfLines);
+"\"Print\""     printf("%d tPRINT\n", noOfLines);
+"\"For\""       printf("%d tFOR\n", noOfLines);
+"\"If\""        printf("%d tIF\n", noOfLines);
+"\"Return\""    printf("%d tRETURN\n", noOfLines);
+,               printf("%d tCOMMA\n", noOfLines);
+"\"++\""        printf("%d tINC\n", noOfLines);
+"\"+\""         printf("%d tPLUS\n", noOfLines);
+"\"*\""         printf("%d tMUL\n", noOfLines);
+"\"==\""         printf("%d tEQUALITY\n", noOfLines);
+"\"--\""         printf("%d tDEC\n", noOfLines);
+"\"-\""          printf("%d tMINUS\n", noOfLines);
+"\">=\""        printf("%d tGEQ\n", noOfLines);
+"\"<=\""         printf("%d tLEQ\n", noOfLines);
+"\">\""         printf("%d tGT\n", noOfLines);
+"\"<\""          printf("%d tLT\n", noOfLines);
+"\"/\""         printf("%d tDIV\n", noOfLines);
+"["             printf("%d tLBRAC\n", noOfLines);
+"]"             printf("%d tRBRAC\n", noOfLines);
+"\""[A-Za-z_][A-Za-z_0-9]*"\"" {
+                                int len = yyleng;
+                                char new[len-1];
+                                int i;
+                                for (i = 1; i < len-1; i++) {
+                                    new[i-1] = yytext[i];
+                                }
+                                new[len-2] = '\0';
+                                printf("%d tIDENT (%s)\n", noOfLines, new);
+                                };
+'([^']|'')*'    {
+                char* chopped = yytext + 1;
+                chopped[yyleng-2] = '\0';
+                int i = 0;
+                printf("%d tSTRING (%s)\n", noOfLines, chopped);
+                for (;i<yyleng; i++){
+                    if (yytext[i] == '\n') noOfLines++;
+                }
+                }
+
+-?[0-9]+        printf("%d tNUM (%s) (%d)\n", noOfLines, yytext, atoi(yytext));
+-?[0-9]+[.][0-9]+ {
+                  char original[yyleng+1];
+
+                  strncpy(original, yytext, sizeof(original));
+                  original[sizeof(original)-1] = '\0';
+                  int allZeros = 1;
+                  int i;
+                  for (i = 0; i < strlen(yytext); i++) {
+                      if (yytext[i] != '0' && yytext[i] != '.' && yytext[i] != '-') {
+                          allZeros = 0;
+                          break;
+                      }
+                  }
+                  
+                  // Remove leading zeros
+                  char* start = yytext;
+                  if (*start == '-') {
+                      start++;
+                  }
+                  while (*start == '0' && *(start + 1) != '\0' && *(start + 1) != '.') {
+                      start++;
+                  }
+                  
+                  // Remove trailing zeros
+                  char* end = strrchr(yytext, '\0') - 1;
+                  while (*end == '0' && end > start && *(end - 1) != '.') {
+                      end--;
+                  }
+                  *(end + 1) = '\0';
+                  
+                  // Check for decimal point and remove if unnecessary
+                  char* decimal = strchr(start, '.');
+                  if (decimal != NULL && *(end + 1) == '.') {
+                      *(end + 1) = '\0';
+                  }
+
+                  // Add back a single zero if the entire string was zeros
+                  if (allZeros && strchr(start, '.') == NULL) {
+                      start = "0";
+                  }
+                  
+                  // Add back the negative sign if there was one
+                  if (yytext[0] == '-') {
+                      char* temp = malloc(strlen(start) + 2);
+                      sprintf(temp, "-%s", start);
+                      start = temp;
+                  }   
+                  printf("%d tNUM (%s) (%s)\n", noOfLines, original, start);
+                }
+"\n"        noOfLines++;        
+[ \t]+ 
+.               printf("%d ILLEGAL CHARACTER (%s)\n", noOfLines, yytext);
+
+%%
+int main(){
+    yylex();
+    return(0);
+}

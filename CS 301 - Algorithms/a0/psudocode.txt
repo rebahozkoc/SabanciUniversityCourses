@@ -1,0 +1,66 @@
+N <-- Number of A's
+
+// Rows from 0 to N-1 represent preference lists of A's and rows from N to 2*N – 1 represent preference lists of B's.
+prefer<--[[Preference list of A's and B's.]]
+bPartner <-- [] // empty list
+// Stores partner of B's. This is our output array that stores passing information.
+// The value of bPartner[i] indicates the partner assigned to B N+i. 
+do for i = 0 to N
+{
+    bPartner[i] <-- "free"
+}
+// An array to store availability of A's.
+// If aFree[i] is false, then ith A is free, otherwise matched.
+aFree <-- [] // empty list
+do for i = 0 to N
+{
+    aFree[i] <-- False
+}
+freeCount <-- N
+do while freeCount > 0
+{ 
+    a <-- 0 // Pick the first free A
+    do while a < N
+    {
+        if aFree[a] is equal to False then
+        {
+            exit the inner while loop
+        }
+        a <-- a + 1
+    }
+    // One by one go to all B's according to
+    // a's preferences. Here a is the picked free A
+    i <-- 0
+    do while i < N and aFree[a] is equal to False
+    {
+        b <-- prefer[a][i]
+
+        // The B of preference is free,
+        // b and a become partners (Note that the partnership maybe changed later).
+        if bPartner[b - N] is equal to -1 then
+        {
+            bPartner[b - N] <-- a
+            aFree[a] <-- True
+            freeCount <-- i - 1
+        }
+        else
+        {    
+            // If b is not free Find the current matching of b
+            a1 <-- bPartner[b - N]
+
+            if b Prefers A Over A1 then
+            {
+                //break the matching between b and a1 and match a with b.
+                bPartner[b - N]<--a
+                aFree[a]<--True
+                aFree[a1]<--False
+            }
+        i <-- i + 1
+        }
+    }
+
+do for i = 0 to N
+{
+    print i, N,  "  ", bPartner[i]
+}
+

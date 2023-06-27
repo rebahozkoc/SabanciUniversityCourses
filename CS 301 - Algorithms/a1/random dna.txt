@@ -1,0 +1,299 @@
+>random sequence 1 consisting of 5 bases.
+cctct
+
+>random sequence 2 consisting of 5 bases.
+gaatg
+
+>random sequence 3 consisting of 5 bases.
+cgcgc
+
+>random sequence 4 consisting of 5 bases.
+acata
+
+>random sequence 5 consisting of 5 bases.
+gtcta
+
+>random sequence 6 consisting of 5 bases.
+gcaca
+
+>random sequence 7 consisting of 5 bases.
+aaggg
+
+>random sequence 8 consisting of 5 bases.
+actga
+
+>random sequence 9 consisting of 5 bases.
+ctgtt
+
+>random sequence 10 consisting of 5 bases.
+cggaa
+
+>random sequence 11 consisting of 5 bases.
+tagtt
+
+>random sequence 12 consisting of 5 bases.
+accca
+
+>random sequence 13 consisting of 5 bases.
+cctat
+
+>random sequence 14 consisting of 5 bases.
+tactc
+
+>random sequence 15 consisting of 5 bases.
+atcgg
+
+>random sequence 16 consisting of 5 bases.
+ttcat
+
+>random sequence 17 consisting of 5 bases.
+aatct
+
+>random sequence 18 consisting of 5 bases.
+actgc
+
+>random sequence 19 consisting of 5 bases.
+ttcca
+
+>random sequence 20 consisting of 5 bases.
+attgt
+
+>random sequence 21 consisting of 5 bases.
+acttt
+
+>random sequence 22 consisting of 5 bases.
+atgct
+
+>random sequence 23 consisting of 5 bases.
+gatga
+
+>random sequence 24 consisting of 5 bases.
+ggacg
+
+>random sequence 25 consisting of 5 bases.
+tactg
+
+>random sequence 26 consisting of 5 bases.
+cacca
+
+>random sequence 27 consisting of 5 bases.
+cgatt
+
+>random sequence 28 consisting of 5 bases.
+cgatg
+
+>random sequence 29 consisting of 5 bases.
+actca
+
+>random sequence 30 consisting of 5 bases.
+cgtcc
+
+>random sequence 31 consisting of 5 bases.
+tgtag
+
+>random sequence 32 consisting of 5 bases.
+accat
+
+>random sequence 33 consisting of 5 bases.
+atcat
+
+>random sequence 34 consisting of 5 bases.
+atcgc
+
+>random sequence 35 consisting of 5 bases.
+gtcac
+
+>random sequence 36 consisting of 5 bases.
+cccct
+
+>random sequence 37 consisting of 5 bases.
+aggat
+
+>random sequence 38 consisting of 5 bases.
+aaagg
+
+>random sequence 39 consisting of 5 bases.
+ggctg
+
+>random sequence 40 consisting of 5 bases.
+gcgtc
+
+>random sequence 41 consisting of 5 bases.
+gtggg
+
+>random sequence 42 consisting of 5 bases.
+aaccc
+
+>random sequence 43 consisting of 5 bases.
+tcatc
+
+>random sequence 44 consisting of 5 bases.
+ccgcc
+
+>random sequence 45 consisting of 5 bases.
+agact
+
+>random sequence 46 consisting of 5 bases.
+ggatt
+
+>random sequence 47 consisting of 5 bases.
+agtgg
+
+>random sequence 48 consisting of 5 bases.
+ggaat
+
+>random sequence 49 consisting of 5 bases.
+ctgag
+
+>random sequence 50 consisting of 5 bases.
+aaggt
+
+>random sequence 51 consisting of 5 bases.
+agttg
+
+>random sequence 52 consisting of 5 bases.
+cggta
+
+>random sequence 53 consisting of 5 bases.
+cctct
+
+>random sequence 54 consisting of 5 bases.
+gatct
+
+>random sequence 55 consisting of 5 bases.
+tgtgc
+
+>random sequence 56 consisting of 5 bases.
+gctgc
+
+>random sequence 57 consisting of 5 bases.
+aggga
+
+>random sequence 58 consisting of 5 bases.
+gtgtc
+
+>random sequence 59 consisting of 5 bases.
+aggca
+
+>random sequence 60 consisting of 5 bases.
+accaa
+
+>random sequence 61 consisting of 5 bases.
+tactc
+
+>random sequence 62 consisting of 5 bases.
+caata
+
+>random sequence 63 consisting of 5 bases.
+cgtaa
+
+>random sequence 64 consisting of 5 bases.
+agatg
+
+>random sequence 65 consisting of 5 bases.
+actgc
+
+>random sequence 66 consisting of 5 bases.
+agttg
+
+>random sequence 67 consisting of 5 bases.
+gcctt
+
+>random sequence 68 consisting of 5 bases.
+gtttc
+
+>random sequence 69 consisting of 5 bases.
+cttcg
+
+>random sequence 70 consisting of 5 bases.
+caaag
+
+>random sequence 71 consisting of 5 bases.
+gatga
+
+>random sequence 72 consisting of 5 bases.
+ccgag
+
+>random sequence 73 consisting of 5 bases.
+ctcgg
+
+>random sequence 74 consisting of 5 bases.
+gcata
+
+>random sequence 75 consisting of 5 bases.
+ccaat
+
+>random sequence 76 consisting of 5 bases.
+ccgtc
+
+>random sequence 77 consisting of 5 bases.
+atgct
+
+>random sequence 78 consisting of 5 bases.
+tccaa
+
+>random sequence 79 consisting of 5 bases.
+agggg
+
+>random sequence 80 consisting of 5 bases.
+cctta
+
+>random sequence 81 consisting of 5 bases.
+tgcta
+
+>random sequence 82 consisting of 5 bases.
+atatc
+
+>random sequence 83 consisting of 5 bases.
+atcac
+
+>random sequence 84 consisting of 5 bases.
+gaatt
+
+>random sequence 85 consisting of 5 bases.
+tgcaa
+
+>random sequence 86 consisting of 5 bases.
+attcc
+
+>random sequence 87 consisting of 5 bases.
+atacc
+
+>random sequence 88 consisting of 5 bases.
+tccga
+
+>random sequence 89 consisting of 5 bases.
+ccccg
+
+>random sequence 90 consisting of 5 bases.
+ataat
+
+>random sequence 91 consisting of 5 bases.
+caata
+
+>random sequence 92 consisting of 5 bases.
+ccagt
+
+>random sequence 93 consisting of 5 bases.
+gcaca
+
+>random sequence 94 consisting of 5 bases.
+gatgt
+
+>random sequence 95 consisting of 5 bases.
+gggta
+
+>random sequence 96 consisting of 5 bases.
+ccccg
+
+>random sequence 97 consisting of 5 bases.
+gattg
+
+>random sequence 98 consisting of 5 bases.
+cgttc
+
+>random sequence 99 consisting of 5 bases.
+gggcg
+
+>random sequence 100 consisting of 5 bases.
+ggaga

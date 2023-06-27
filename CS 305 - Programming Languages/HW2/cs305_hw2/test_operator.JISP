@@ -1,0 +1,5 @@
+[
+    [ "+", 1, 2]
+    [ "-", ["Get", "endTime"], ["Get", "startTime"]]
+    [ "/", ["Get", "WeeklyBudget"], 7]
+]

@@ -1,0 +1,74 @@
+%{
+#include "rebahozkoc-hw3.h"
+#include "rebahozkoc-hw3.tab.h" 
+
+int lineCount = 1;
+
+%}
+%%
+
+['][^']*[']		    {
+                    char* chopped = yytext + 1;
+                    chopped[yyleng-2] = '\0';
+                    char *result = (char *)malloc(strlen(chopped));
+                    strcpy(result,chopped);
+                    yylval.literalNode.value.stringValue = result;
+                    yylval.literalNode.type = STRING;
+                    return tSTRING;
+                    }
+
+["]Get["]		    return tGET;
+["]Set["]		    return tSET;
+["]Function["]		return tFUNCTION;
+["]Print["]		    return tPRINT;
+["]If["]		    return tIF;
+["]Return["]		return tRETURN;
+
+["]"+"["]           {
+                    yylval.lineNum = lineCount;
+                    return tADD;
+                    }         
+["]"-"["]          {
+                    yylval.lineNum = lineCount;
+                    return tSUB;
+                    }            
+["]"*"["]          {
+                    yylval.lineNum = lineCount;
+                    return tMUL;
+                    }            
+["]"/"["]          {
+                    yylval.lineNum = lineCount;
+                    return tDIV;
+                    }            
+["]"++"["]		    return tINC;
+["]">"["]		    return tGT;
+["]"=="["]		    return tEQUALITY;
+["]"--"["]		    return tDEC;
+["]"<"["]		    return tLT;
+["]"<="["]		    return tLEQ;
+["]">="["]		    return tGEQ;
+
+
+["][_a-zA-Z][a-zA-Z0-9_]*["]	return tIDENT;
+				
+[0-9]+ |
+-[0-9]+             {                 
+                    yylval.literalNode.value.intValue = atoi(yytext);
+                    yylval.literalNode.type = INTEGER;
+                    
+                    return tNUM;
+                    }
+
+[0-9]+"."[0-9]+	|
+-[0-9]+"."[0-9]+	{                 
+                    yylval.literalNode.value.realValue = atof(yytext);
+                    yylval.literalNode.type = REAL;
+
+                    return tNUM;
+                    }
+	
+[\n]                lineCount++;
+[ \t\r]+ 
+.			        return yytext[0];
+
+%%

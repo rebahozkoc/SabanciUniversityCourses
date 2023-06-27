@@ -1,0 +1,47 @@
+# Create city graphs
+# Create transferTime dictionary 
+# Create distance dictionaries db (bus), dt (train)
+
+
+for each v ∈ V do: 
+	db[v] = infinity
+	dt[v] = infinity
+
+if startType is train:
+	dt[s] = 0
+	db[s] = transferTime[s]
+else:
+	dt[s] = transferTime[s]	
+	db[s] = 0
+
+for k = 1 to |V|:
+	for each edge in (u,v) ∈ E:
+		if dt[v] > dt[u] + wt[u, v]:
+			dt[v] = dt[u] + wt[u, v]
+		if db[v] > db[u] + wb[u, v]:
+			db[v] = db[u] + wb[u, v]
+		if dt[v] > db[u] + wt[u, v] + transferTime[v]:
+			dt[v] = db[u] + wt[u, v] + transferTime[v]
+		if db[v] > dt[u] + wb[u, v] + transferTime[v]:
+			db[v] = dt[u] + wb[u, v] + transferTime[v]
+
+
+# Check if any negative circle exist
+
+for each edge in (u,v) ∈ E:
+	if dt[v] > dt[u] + wt[u, v]:
+		report negative cycle
+	if db[v] > db[u] + wb[u, v]:
+		report negative cycle
+	if dt[v] > db[u] + wt[u, v] + transferTime[v]:
+		report negative cycle
+	if db[v] > dt[u] + wb[u, v] + transferTime[v]:
+		report negative cycle
+
+# Merge the results and find min
+initialize resultDict 
+for each vertex in V:
+	if dt[v] < db[v]:
+		resultDict[v] = dt[v]
+	else:
+		resultDict[v] = db[v]
